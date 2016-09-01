@@ -2,7 +2,7 @@
 
 class error404Controller extends Controller
 {
-    function index($params)
+    function error($params)
     {
         $this->set('params', $params);
     }

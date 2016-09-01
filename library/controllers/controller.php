@@ -29,13 +29,13 @@ class Controller {
     /*
     ** Basic function call if no action is specified while calling for this controller
     */
-    function index($params)
+    function index()
     {
 
     }
 
     /*
-    ** Controller's own 404error page 
+    ** Controller's own 404error page
     */
     function noAction()
     {

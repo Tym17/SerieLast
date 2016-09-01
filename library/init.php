@@ -25,7 +25,7 @@ array_shift($urlArray);
 /*
 ** Define default function Callback
 */
-$queryString;
+$queryString = array();
 if (!empty($urlArray))
 {
     $action = $urlArray[0];
@@ -59,14 +59,14 @@ if (class_exists($controller))
         else
         {
             /* Call 404 of the app */
-            $dispatch = new error404Controller('error404', 'index');
-            call_user_func_array(array($dispatch, 'index'), array($controller));
+            $dispatch = new error404Controller('error404', 'error');
+            call_user_func_array(array($dispatch, 'error'), array($controller));
         }
     }
 }
 else
 {
     /* Call 404 of the app */
-    $dispatch = new error404Controller('error404', 'index');
-    call_user_func_array(array($dispatch, 'index'), array($controller));
+    $dispatch = new error404Controller('error404', 'error');
+    call_user_func_array(array($dispatch, 'error'), array($controller));
 }

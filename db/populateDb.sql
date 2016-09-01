@@ -1,0 +1,15 @@
+CREATE TABLE `user` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`name`	TEXT,
+	`pass`	TEXT
+);
+
+CREATE TABLE `serie` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`OwnerId`	INTEGER,
+	`Name`	TEXT,
+	`AirDate`	TEXT,
+	`Ended`	INTEGER,
+	`lastSeason`	INTEGER,
+	`LastEpisode`	INTEGER
+);
