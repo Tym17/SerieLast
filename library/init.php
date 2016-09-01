@@ -28,12 +28,17 @@ array_shift($urlArray);
 $queryString = array();
 if (!empty($urlArray))
 {
-    $action = $urlArray[0];
-    if (!empty($urlArray))
+    if ($urlArray[0] != "")
     {
-        array_shift($urlArray);
-        $queryString = $urlArray;
+        $action = $urlArray[0];
+        if (!empty($urlArray))
+        {
+            array_shift($urlArray);
+            $queryString = $urlArray;
+        }
     }
+    else
+        $action = 'index';
 }
 else
     $action = 'index';
@@ -44,7 +49,7 @@ $controller .= 'Controller';
 if (class_exists($controller))
 {
     $dispatch = new $controller($controllerName,$action);
-    echo $controller . ', ' . $action;
+    echo $controller . ', ' . $action . '<br />';
     if ((int)method_exists($controller, $action))
     {
         call_user_func_array(array($dispatch,$action), $queryString);

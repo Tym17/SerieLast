@@ -14,4 +14,5 @@ class InstallModel extends sqliteHandle
         $result = $this->dbhandle->exec($stm);
         return $result;
     }
+
 }

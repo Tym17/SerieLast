@@ -2,6 +2,7 @@
 
 class sqliteHandle
 {
+    protected $dbhandle;
 
     function __construct($db_filename)
     {
@@ -13,7 +14,7 @@ class sqliteHandle
 
     function __destruct()
     {
-        
+        $this->dbhandle->close();
     }
 
     function query($query)

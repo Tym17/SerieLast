@@ -1,0 +1,7 @@
+<p> Add a user to serielast </p>
+<form action="<?php echo APP_URL . '/install/userForm' ?>" method="post">
+    <label>Name: </label><input name="name" type="text"></input><br />
+    <label>Pass: </label><input name="pass" type="password"></input><br />
+    <input type="hidden" name="sha2password" value="" />
+    <button type="submit">Add user</button><br />
+</form>
