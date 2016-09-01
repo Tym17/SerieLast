@@ -6,35 +6,36 @@ class Controller {
     protected $_action;
     protected $_template;
 
-    function __construct($model, $controller, $action) {
+    function __construct($controller, $action) {
 
         $this->_controller = $controller;
         $this->_action = $action;
 
-        if ($model != null)
-        {
-            $this->_model = $model;
-            $this->$model = new $model;
-        }
-
         $this->_template = new Template($controller,$action);
     }
 
+    /*
+    ** Pass variable to the Template
+    */
     function set($name,$value) {
         $this->_template->set($name,$value);
     }
 
     function __destruct() {
+        // render Template uppon destruction
         $this->_template->render();
     }
 
+    /*
+    ** Basic function call if no action is specified while calling for this controller
+    */
     function index($params)
     {
 
     }
-    
+
     /*
-    ** 404error page of the controller
+    ** Controller's own 404error page 
     */
     function noAction()
     {

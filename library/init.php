@@ -40,11 +40,10 @@ else
 
 $controllerName = $controller;
 $controller = ucwords($controller);
-$model = rtrim($controller, 's');
 $controller .= 'Controller';
 if (class_exists($controller))
 {
-    $dispatch = new $controller($model,$controllerName,$action);
+    $dispatch = new $controller($controllerName,$action);
     echo $controller . ', ' . $action;
     if ((int)method_exists($controller, $action))
     {
@@ -60,7 +59,7 @@ if (class_exists($controller))
         else
         {
             /* Call 404 of the app */
-            $dispatch = new error404Controller(null, 'error404', 'index');
+            $dispatch = new error404Controller('error404', 'index');
             call_user_func_array(array($dispatch, 'index'), array($controller));
         }
     }
@@ -68,6 +67,6 @@ if (class_exists($controller))
 else
 {
     /* Call 404 of the app */
-    $dispatch = new error404Controller(null, 'error404', 'index');
+    $dispatch = new error404Controller('error404', 'index');
     call_user_func_array(array($dispatch, 'index'), array($controller));
 }
