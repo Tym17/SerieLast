@@ -7,7 +7,7 @@ class IndexController extends Controller
     {
         if (!isset($_SESSION['user_id']))
         {
-            // fall back on login controller
+            $this->_template->setRedirection(APP_URL . '/login');
             return ;
         }
     }
