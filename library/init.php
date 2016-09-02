@@ -10,8 +10,7 @@ if (DEVELOPMENT_ENVIRONMENT == true) {
     ini_set('error_log', ROOT.DS.'tmp'.DS.'error.log');
 }
 
-
-
+session_start();
 
 /*
 ** Call hook

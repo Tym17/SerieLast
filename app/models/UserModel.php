@@ -11,6 +11,8 @@ class UserModel extends sqliteHandle
     {
         $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'userList.sql'));
         $result = $this->query($query);
+        if (!$result)
+            return array();
         $retArrey = array();
         $inserted = true;
         // Arrayification of results
@@ -31,6 +33,17 @@ class UserModel extends sqliteHandle
         $stm = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'addUser.sql'));
         $stm = str_replace(":name", $name, $stm);
         $stm = str_replace(":pass", $pass, $stm);
-        $result = $this->query($stm);
+        return $this->query($stm);
+    }
+
+    function getPassFromId($id)
+    {
+        $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'passFromId.sql'));
+        $query = str_replace(":id", $id, $query);
+        $result = $this->query($query);
+        if (!$result)
+            return "";
+        $ret = $result->fetchArray(SQLITE3_ASSOC);
+        return $ret['pass'];
     }
 }

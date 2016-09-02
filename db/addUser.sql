@@ -1,1 +1,1 @@
-INSERT INTO `user` (name, pass) VALUES (':name', ':pass');
+INSERT INTO `users` (name, pass) VALUES (':name', ':pass');
