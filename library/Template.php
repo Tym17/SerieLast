@@ -17,8 +17,17 @@ class Template {
         $this->variables[$name] = $value;
     }
 
-    /** Display Template **/
+    function setController($nc)
+    {
+        $this->_controller = $nc;
+    }
 
+    function setAction($na)
+    {
+        $this->_action = $na;
+    }
+
+    /** Display Template **/
     function render() {
         extract($this->variables);
 

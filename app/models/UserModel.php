@@ -13,6 +13,7 @@ class UserModel extends sqliteHandle
         $result = $this->query($query);
         $retArrey = array();
         $inserted = true;
+        // Arrayification of results
         while ($inserted)
         {
             $inserted = $result->fetchArray(SQLITE3_ASSOC);
@@ -30,7 +31,6 @@ class UserModel extends sqliteHandle
         $stm = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'addUser.sql'));
         $stm = str_replace(":name", $name, $stm);
         $stm = str_replace(":pass", $pass, $stm);
-        echo $stm;
         $result = $this->query($stm);
     }
 }

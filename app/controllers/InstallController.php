@@ -11,16 +11,38 @@ class Installcontroller extends Controller
 
     function addUser()
     {
-        $users = new UserModel;
-        $this->set('users', $users->getUserNames());
-        //show user form
-    }
-
-    function userForm()
-    {
         // Check post values and populate db
-        $users = new UserModel;
-        $users->addUser(htmlspecialchars($_POST['name']), hash("sha256", $_POST['pass'] . BACK_HASH_SALT));
+        if (isset($_POST['name']) && isset($_POST['pass']))
+        {
+            $newName = htmlspecialchars($_POST['name']);
+
+            // Username lenght check
+            if (strlen($newName) == 0)
+            {
+                $this->set('error', 'User Name needs to be at least 1 character long');
+                return ;
+            }
+
+            // Username uniqueness check
+            $user = new UserModel;
+            $uNames = $user->getUserNames();
+
+            $alreadyPresent = false;
+            foreach ($uNames as $key => $value) {
+                if ($value['name'] == $newName)
+                    $alreadyPresent = true;
+            }
+
+            if (!$alreadyPresent)
+            {
+                // success, lets add it to the database and inform the user
+                $user->addUser($newName, hash("sha256", $_POST['pass'] . BACK_HASH_SALT));
+                $this->set('success', 'Added user ' . $newName . ' to SerieLast.');
+            }
+            else {
+                $this->set('error', 'This name is already used');
+            }
+        }
     }
 
 }
