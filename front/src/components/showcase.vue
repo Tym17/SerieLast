@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <img v-bind:src="img_source"></img>
-    <airday></airday>
-    <episode></episode>
+  <div class="showcase">
+    <img v-bind:src="img"></img>
+    <airday :day="day" style="display: "></airday>
+    <episode :season="season" :episode="episode"></episode>
   </div>
 </template>
 
@@ -14,21 +14,25 @@ export default {
   components: {
     airday, episode
   },
-  data () {
-    return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      img_source: 'http://vuejs.org/images/logo.png'
-    }
-  }
+  props: ['img', 'day', 'season', 'episode']
+
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  color: #42b983;
+.showcase
+{
+  border: 1px solid #EEE;
+  box-shadow: 0px 0px 10px #777;
+  height: 220px;
+  width: 220px;
 }
+
+.showcase img
+{
+  width: 220px;
+  height: 220px;
+}
+
 </style>
