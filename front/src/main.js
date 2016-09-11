@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import App from './App'
+// import App from './App'
 import showcase from './components/showcase'
 
 /* eslint-disable no-new */
 new Vue({
   el: 'body',
-  components: { App, showcase }
+  components: { showcase }
 })
