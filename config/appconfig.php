@@ -12,3 +12,4 @@ define('APP_INSTALLED', false);
 
 define('BACK_HASH_SALT', 'Mr&MrsSmith');
 define('FRONT_HASH_SALT', 'Wanted');
+define('APP_THEME', 'blue');

@@ -48,7 +48,7 @@ $controller .= 'Controller';
 if (class_exists($controller))
 {
     $dispatch = new $controller($controllerName,$action);
-    echo $controller . ', ' . $action . '<br />';
+    //echo $controller . ', ' . $action . '<br />';
     if ((int)method_exists($controller, $action))
     {
         call_user_func_array(array($dispatch,$action), $queryString);
