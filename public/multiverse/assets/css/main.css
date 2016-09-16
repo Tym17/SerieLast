@@ -489,6 +489,12 @@
 				width: 50%;
 			}
 
+			form .field.third {
+				float: left;
+				padding: 0 0 0 0.65em;
+				width: 33%;
+			}
+
 				form .field.half.first {
 					padding: 0 0.65em 0 0;
 				}
