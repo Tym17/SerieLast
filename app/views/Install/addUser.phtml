@@ -1,9 +1,10 @@
-<p> Add a user to serielast </p>
-<?php if (isset($error)) { echo '<p>' . $error . '</p>'; } ?>
-<?php if (isset($success)) { echo '<p>' . $success . '</p>'; } ?>
-<form action="<?php echo APP_URL . '/install/addUser' ?>" method="post">
-    <label>Name: </label><input name="name" type="text"></input><br />
-    <label>Pass: </label><input name="pass" type="password"></input><br />
-    <button type="submit">Add user</button><br />
-</form>
-<a href="<?php echo APP_URL . '/install' ?>"><button>Back to install menu</button></a>
+<?php if (isset($error)) { echo '<p class="red-font">' . $error . '</p>'; } ?>
+<?php if (isset($success)) { echo '<p class="green-font">' . $success . '</p>'; } ?>
+<div>
+  <form action="<?php echo APP_URL . '/install/addUser' ?>" method="post" class="sign_form">
+    <input name="name" type="text" placeholder="Name" style="width: 18em;"></input>
+    <input name="pass" type="password" placeholder="Password" style="width: 18em;"></input>
+    <input type="submit" value="Add user"></input><br />
+  </form>
+</div>
+<a href="<?php echo APP_URL . '/install' ?>" style="text-decoration: none;"><button>Back to install menu</button></a>
