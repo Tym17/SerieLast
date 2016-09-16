@@ -31,7 +31,7 @@ class LoginController extends Controller
             // check user's password hash
             if (!(hash("sha256", $_POST['user_pass'] . BACK_HASH_SALT) == $users->getPassFromId($userId)))
             {
-                $this->set('error', 'Password or UserName is incorrect');
+                $this->set('error', 'Password or username is incorrect');
                 return ;
             }
             // success
