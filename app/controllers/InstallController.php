@@ -10,7 +10,6 @@ class Installcontroller extends Controller
 
     function populateDb()
     {
-        $this->set('page_desc', 'Succesfully created database, you should now edit the app config and disable install pages access exept if you plan on adding users');
         $install = new InstallModel;
         $install->populate();
     }
@@ -18,7 +17,6 @@ class Installcontroller extends Controller
     function addUser()
     {
         // Check post values and populate db
-        $this->set('page_desc', 'Add an user to your installation');
         if (isset($_POST['name']) && isset($_POST['pass']))
         {
             $newName = htmlspecialchars($_POST['name']);

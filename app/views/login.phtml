@@ -1,49 +1,10 @@
-<!DOCTYPE HTML>
-<!--
-Eventually by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-<head>
-  <title>SerieLast: Setup</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="<?php echo APP_URL . '/eventually/assets/js/ie/html5shiv.js' ?>"></script><![endif]-->
-  <link rel="stylesheet" href="<?php echo APP_URL . '/eventually/assets/css/main.css' ?>" />
-  <link rel="stylesheet" href="<?php echo APP_URL . '/css/serielast.css' ?>" />
-  <!--[if lte IE 8]><link rel="stylesheet" href="<?php echo APP_URL . '/eventually/assets/css/ie8.css' ?>" /><![endif]-->
-  <!--[if lte IE 9]><link rel="stylesheet" href="<?php echo APP_URL . '/eventually/assets/css/ie9.css' ?>" /><![endif]-->
-</head>
-<body>
-
-  <!-- Header -->
-  <header id="header">
-    <h1>SerieLast</h1>
-    <p>Log in</p>
-  </header>
-
-  <?php if (isset($error)) { echo '<p class="red-font">' . $error . '</p>'; } ?>
+<div class="center-signin">
+  <h1>SerieLast</h1>
+  <p>Log in</p>
+  <?php if (isset($error)) { echo '<div class="alert alert-danger">' . $error . '</div>'; } ?>
   <form action="<?php echo APP_URL . '/login' ?>" method="post" class="sign_form">
-    <input type="text" name="user_name" placeholder="Name"></input>
-    <input type="password" name="user_pass" placeholder="Password"></input>
-    <input type="submit" value="Log in"></input>
+    <input type="text" name="user_name" placeholder="Name" class="form-control"></input>
+    <input type="password" name="user_pass" placeholder="Password" class="form-control"></input>
+    <input type="submit" value="Log in" class="btn btn-lg btn-primary btn-block"></input>
   </form>
-
-
-  <!-- Footer -->
-  <footer id="footer">
-    <ul class="icons">
-      <li><a href="https://github.com/Tym17/SerieLast" class="icon fa-github"><span class="label">GitHub</span></a></li>
-    </ul>
-    <ul class="copyright">
-      <li>&copy; SerieLast.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
-    </ul>
-  </footer>
-
-  <!-- Scripts -->
-  <!--[if lte IE 8]><script src="<?php echo APP_URL . '/eventually/assets/js/ie/respond.min.js' ?>"></script><![endif]-->
-  <script src="<?php echo APP_URL . '/eventually/assets/js/main.js' ?>"></script>
-
-</body>
-</html>
+</div>
