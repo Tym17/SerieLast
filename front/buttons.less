@@ -1,15 +1,15 @@
 .active-btn(@btn-main)
 {
   color: mix(@main, @btn-main, 50%);
-  background-color: lighten(@back, 15%);
+  background-color: mix(lighten(@back, 15%), @color, 85%);
   border-color: darken(mix(@main, @btn-main, 50%), 10%);
 }
 
-.btn-primary
+.btn-custom(@color)
 {
-  color: lighten(@blue, 10%);
+  color: lighten(@color, 10%);
   background: @back;
-  border-color: @blue;
+  border-color: @color;
   transition-duration: 0.4s;
 
   &:hover
@@ -21,16 +21,26 @@
 
   &:focus, &:active, &.active, &.focus
   {
-    .active-btn(@blue);
+    .active-btn(@color);
   }
 
   &:active, &.active
   {
-    .active-btn(@blue);
+    .active-btn(@color);
 
     &:focus, &.focus
     {
-      .active-btn(@blue);
+      .active-btn(@color);
     }
   }
+}
+
+.btn-primary
+{
+  .btn-custom(@blue);
+}
+
+.btn-danger
+{
+  .btn-custom(@red);
 }

@@ -14,13 +14,13 @@
 .btn-primary.active,
 .btn-primary.focus {
   color: #a2aadd;
-  background-color: #595959;
+  background-color: #5b5e6d;
   border-color: #7c88cf;
 }
 .btn-primary:active,
 .btn-primary.active {
   color: #a2aadd;
-  background-color: #595959;
+  background-color: #5b5e6d;
   border-color: #7c88cf;
 }
 .btn-primary:active:focus,
@@ -28,8 +28,41 @@
 .btn-primary:active.focus,
 .btn-primary.active.focus {
   color: #a2aadd;
-  background-color: #595959;
+  background-color: #5b5e6d;
   border-color: #7c88cf;
+}
+.btn-danger {
+  color: #e6909c;
+  background: #333333;
+  border-color: #dd6677;
+  transition-duration: 0.4s;
+}
+.btn-danger:hover {
+  color: #dddddd;
+  background: #404040;
+  border-color: #c4c4c4;
+}
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active,
+.btn-danger.focus {
+  color: #dda2aa;
+  background-color: #6d5b5e;
+  border-color: #cf7c88;
+}
+.btn-danger:active,
+.btn-danger.active {
+  color: #dda2aa;
+  background-color: #6d5b5e;
+  border-color: #cf7c88;
+}
+.btn-danger:active:focus,
+.btn-danger.active:focus,
+.btn-danger:active.focus,
+.btn-danger.active.focus {
+  color: #dda2aa;
+  background-color: #6d5b5e;
+  border-color: #cf7c88;
 }
 .form-control {
   background-color: #404040;
@@ -60,11 +93,15 @@
 .alert-success strong {
   color: #6af053;
 }
-.red-font {
-  color: #dd6677;
-}
-.green-font {
-  color: #77dd66;
+.my-nav {
+  background-color: #303030;
+  border-top: 1px solid;
+  border-color: #2b2b2b;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 5px;
 }
 body {
   color: #dddddd;
