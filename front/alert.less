@@ -1,0 +1,21 @@
+.create-alert(@color)
+{
+  background-color: mix(@back, @color, 85%);
+  border-color: @color;
+  color: @color;
+
+  strong
+  {
+    color: saturate(@color, 20%);
+  }
+}
+
+.alert-danger
+{
+  .create-alert(@red);
+}
+
+.alert-success
+{
+  .create-alert(@green);
+}

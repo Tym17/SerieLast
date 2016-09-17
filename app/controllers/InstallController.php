@@ -44,7 +44,7 @@ class Installcontroller extends Controller
             {
                 // success, lets add it to the database and inform the user
                 $user->addUser($newName, hash("sha256", $_POST['pass'] . BACK_HASH_SALT));
-                $this->set('success', 'Added user ' . $newName . ' to SerieLast.');
+                $this->set('success', 'Added user <strong>' . $newName . '</strong> to SerieLast.');
             }
             else {
                 $this->set('error', 'This name is already used');

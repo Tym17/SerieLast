@@ -1,10 +1,16 @@
-<?php if (isset($error)) { echo '<p class="red-font">' . $error . '</p>'; } ?>
-<?php if (isset($success)) { echo '<p class="green-font">' . $success . '</p>'; } ?>
-<div>
-  <form action="<?php echo APP_URL . '/install/addUser' ?>" method="post" class="sign_form">
-    <input name="name" type="text" placeholder="Name" style="width: 18em;"></input>
-    <input name="pass" type="password" placeholder="Password" style="width: 18em;"></input>
-    <input type="submit" value="Add user"></input><br />
-  </form>
+<div class="center-signin">
+  <h1>SerieLast</h1>
+  <p>Add an user to your installation</p>
+  <?php if (isset($error)) { echo '<div class="alert alert-danger">' . $error . '</div>'; } ?>
+  <?php if (isset($success)) { echo '<div class="alert alert-success">' . $success . '</div>'; } ?>
+  <div>
+    <form action="<?php echo APP_URL . '/install/addUser' ?>" method="post">
+      <label class="sr-only">Name</label>
+      <input name="name" type="text" placeholder="Name" class="form-control" autofocus></input>
+      <label class="sr-only">Password</label>
+      <input name="pass" type="password" placeholder="Password" class="form-control"></input>
+      <input type="submit" value="Add user" class="btn btn-lg btn-primary btn-block"></input><br />
+    </form>
+  </div>
+  <a href="<?php echo APP_URL . '/install' ?>" class="btn btn-lg btn-primary btn-block">Back to install menu</a>
 </div>
-<a href="<?php echo APP_URL . '/install' ?>" style="text-decoration: none;"><button>Back to install menu</button></a>

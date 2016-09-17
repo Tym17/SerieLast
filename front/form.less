@@ -1,0 +1,18 @@
+.form-control
+{
+  background-color: lighten(@back, 5%);
+  color: shade(@main, 10%);
+  transition-duration: 0.2s;
+
+  &:focus
+  {
+    background-color: lighten(@back, 10%);
+    color: @main;
+    border-color: @blue;
+  }
+
+  &:invalid
+  {
+    border-color: @red;
+  }
+}
