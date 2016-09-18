@@ -14,5 +14,6 @@ CREATE TABLE `serie` (
 	`AirDate`	TEXT,
 	`Ended`	INTEGER,
 	`lastSeason`	INTEGER,
-	`LastEpisode`	INTEGER
+	`LastEpisode`	INTEGER,
+	`Color`	TEXT
 );

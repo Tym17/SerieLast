@@ -1,0 +1,35 @@
+.mk-card-outline(@color)
+{
+  border-color: @color;
+  background-color: lighten(@back, 2.5%);
+}
+
+.card-outline-primary
+{
+  .mk-card-outline(@blue);
+}
+
+.card-outline-secondary
+{
+  .mk-card-outline(@main);
+}
+
+.card-outline-success
+{
+  .mk-card-outline(@green);
+}
+
+.card-outline-warning
+{
+  .mk-card-outline(@orange);
+}
+
+.card-outline-danger
+{
+  .mk-card-outline(@red);
+}
+
+.card-outline-info
+{
+  .mk-card-outline(@cyan);
+}

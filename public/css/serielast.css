@@ -64,6 +64,138 @@
   background-color: #6d5b5e;
   border-color: #cf7c88;
 }
+.btn-info {
+  color: #8fbdb6;
+  background: #333333;
+  border-color: #6faaa2;
+  transition-duration: 0.4s;
+}
+.btn-info:hover {
+  color: #dddddd;
+  background: #404040;
+  border-color: #c4c4c4;
+}
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.btn-info.focus {
+  color: #a6c4bf;
+  background-color: #5c6564;
+  border-color: #87afa9;
+}
+.btn-info:active,
+.btn-info.active {
+  color: #a6c4bf;
+  background-color: #5c6564;
+  border-color: #87afa9;
+}
+.btn-info:active:focus,
+.btn-info.active:focus,
+.btn-info:active.focus,
+.btn-info.active.focus {
+  color: #a6c4bf;
+  background-color: #5c6564;
+  border-color: #87afa9;
+}
+.btn-warning {
+  color: #f0ba75;
+  background: #333333;
+  border-color: #eba347;
+  transition-duration: 0.4s;
+}
+.btn-warning:hover {
+  color: #dddddd;
+  background: #404040;
+  border-color: #c4c4c4;
+}
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.btn-warning.focus {
+  color: #e4c092;
+  background-color: #6f6457;
+  border-color: #daa969;
+}
+.btn-warning:active,
+.btn-warning.active {
+  color: #e4c092;
+  background-color: #6f6457;
+  border-color: #daa969;
+}
+.btn-warning:active:focus,
+.btn-warning.active:focus,
+.btn-warning:active.focus,
+.btn-warning.active.focus {
+  color: #e4c092;
+  background-color: #6f6457;
+  border-color: #daa969;
+}
+.btn-success {
+  color: #9ce690;
+  background: #333333;
+  border-color: #77dd66;
+  transition-duration: 0.4s;
+}
+.btn-success:hover {
+  color: #dddddd;
+  background: #404040;
+  border-color: #c4c4c4;
+}
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.btn-success.focus {
+  color: #aadda2;
+  background-color: #5e6d5b;
+  border-color: #88cf7c;
+}
+.btn-success:active,
+.btn-success.active {
+  color: #aadda2;
+  background-color: #5e6d5b;
+  border-color: #88cf7c;
+}
+.btn-success:active:focus,
+.btn-success.active:focus,
+.btn-success:active.focus,
+.btn-success.active.focus {
+  color: #aadda2;
+  background-color: #5e6d5b;
+  border-color: #88cf7c;
+}
+.btn-secondary {
+  color: #f7f7f7;
+  background: #333333;
+  border-color: #dddddd;
+  transition-duration: 0.4s;
+}
+.btn-secondary:hover {
+  color: #dddddd;
+  background: #404040;
+  border-color: #c4c4c4;
+}
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active,
+.btn-secondary.focus {
+  color: #dddddd;
+  background-color: #6d6d6d;
+  border-color: #c4c4c4;
+}
+.btn-secondary:active,
+.btn-secondary.active {
+  color: #dddddd;
+  background-color: #6d6d6d;
+  border-color: #c4c4c4;
+}
+.btn-secondary:active:focus,
+.btn-secondary.active:focus,
+.btn-secondary:active.focus,
+.btn-secondary.active.focus {
+  color: #dddddd;
+  background-color: #6d6d6d;
+  border-color: #c4c4c4;
+}
 .form-control {
   background-color: #404040;
   color: #c7c7c7;
@@ -93,15 +225,75 @@
 .alert-success strong {
   color: #6af053;
 }
+.alert-secondary {
+  background-color: #4d4d4d;
+  border-color: #dddddd;
+  color: #dddddd;
+}
+.alert-secondary strong {
+  color: #e4d6d6;
+}
+.alert-primary {
+  background-color: #3b3d4d;
+  border-color: #6677dd;
+  color: #6677dd;
+}
+.alert-primary strong {
+  color: #536af0;
+}
+.alert-info {
+  background-color: #3c4544;
+  border-color: #6faaa2;
+  color: #6faaa2;
+}
+.alert-info strong {
+  color: #58c1b2;
+}
+.alert-warning {
+  background-color: #4f4436;
+  border-color: #eba347;
+  color: #eba347;
+}
+.alert-warning strong {
+  color: #ffa633;
+}
 .my-nav {
-  background-color: #303030;
+  background-color: #2d2d2d;
   border-top: 1px solid;
-  border-color: #2b2b2b;
+  border-color: #262626;
   position: fixed;
   bottom: 0px;
   left: 0px;
   right: 0px;
-  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.my-nav a {
+  margin: 5px;
+}
+.card-outline-primary {
+  border-color: #6677dd;
+  background-color: #393939;
+}
+.card-outline-secondary {
+  border-color: #dddddd;
+  background-color: #393939;
+}
+.card-outline-success {
+  border-color: #77dd66;
+  background-color: #393939;
+}
+.card-outline-warning {
+  border-color: #eba347;
+  background-color: #393939;
+}
+.card-outline-danger {
+  border-color: #dd6677;
+  background-color: #393939;
+}
+.card-outline-info {
+  border-color: #6faaa2;
+  background-color: #393939;
 }
 body {
   color: #dddddd;
@@ -111,4 +303,7 @@ strong {
 }
 h1 {
   color: #f7f7f7;
+}
+.darker-main {
+  color: #777777;
 }
