@@ -209,6 +209,9 @@
 .form-control:invalid {
   border-color: #dd6677;
 }
+.form-control:disabled {
+  background-color: #262626;
+}
 .alert-danger {
   background-color: #4d3b3d;
   border-color: #dd6677;
