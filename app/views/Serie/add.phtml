@@ -1,5 +1,5 @@
 <div class="center-signin">
-  <h1>SerieLast</h1>
+  <a href="<?php echo APP_URL ?>"><h1>SerieLast</h1></a>
   <p>Add a serie</p>
   <?php if (isset($error)) { echo '<div class="alert alert-danger">' . $error . '</div>'; } ?>
   <?php if (isset($success)) { echo '<div class="alert alert-success">' . $success . '</div>'; } ?>
@@ -14,6 +14,14 @@
       <input name="episode" type="number" value="0" class="form-control" autofocus></input>
       <label>Air day/Release day</label>
       <input name="airdate" type="text" placeholder="e.g: 'Friday' or '21/12/16'" class="form-control" autofocus></input>
+      <label>Color</label>
+      <select name="color" class="form-control">
+        <option value="primary">Blue</option>
+        <option value="danger">red</option>
+        <option value="warning">orange</option>
+        <option value="info">cyan</option>
+        <option value="success">green</option>
+      </select>
       <br/>
       <input type="submit" value="Add Serie" class="btn btn-lg btn-primary btn-block"></input><br />
     </form>
