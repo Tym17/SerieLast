@@ -12,8 +12,7 @@ CREATE TABLE `serie` (
 	`OwnerId`	INTEGER,
 	`Name`	TEXT,
 	`AirDate`	TEXT,
-	`Ended`	INTEGER,
-	`lastSeason`	INTEGER,
+	`LastSeason`	INTEGER,
 	`LastEpisode`	INTEGER,
 	`Color`	TEXT
 );

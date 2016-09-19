@@ -5,7 +5,6 @@ class Installcontroller extends Controller
 
     function index()
     {
-      $this->set('page_desc', 'Setup menu');
     }
 
     function populateDb()

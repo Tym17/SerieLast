@@ -9,7 +9,7 @@ class UserModel extends sqliteHandle
 
     function getUserNames()
     {
-        $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'userList.sql'));
+        $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'users' . DS . 'userList.sql'));
         $result = $this->query($query);
         if (!$result)
             return array();
@@ -30,7 +30,7 @@ class UserModel extends sqliteHandle
 
     function addUser($name, $pass)
     {
-        $stm = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'addUser.sql'));
+        $stm = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'users' . DS . 'addUser.sql'));
         $stm = str_replace(":name", $name, $stm);
         $stm = str_replace(":pass", $pass, $stm);
         return $this->query($stm);
@@ -38,7 +38,7 @@ class UserModel extends sqliteHandle
 
     function getPassFromId($id)
     {
-        $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'passFromId.sql'));
+        $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'users' . DS . 'passFromId.sql'));
         $query = str_replace(":id", $id, $query);
         $result = $this->query($query);
         if (!$result)

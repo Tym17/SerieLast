@@ -15,5 +15,11 @@ class Seriecontroller extends Controller
 
     function edit($id)
     {
+      if (!isset($id) || strlen($id) == 0)
+      {
+        $this->_template->setRedirection(APP_URL . '/serie/add');
+        return ;
+      }
+      
     }
 }
