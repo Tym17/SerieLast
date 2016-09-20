@@ -21,7 +21,26 @@ class sqliteHandle
     {
         $result = $this->dbhandle->query($query);
         if (!$result)
+        {
+            // Issue #1
             die('Could not execute query.');
+        }
         return $result;
+    }
+
+    function arrayify($result)
+    {
+      // Arrayification of results
+      $retArray = array();
+      $inserted = true;
+      while ($inserted)
+      {
+          $inserted = $result->fetchArray(SQLITE3_ASSOC);
+          if ($inserted)
+          {
+              $retArray[] = $inserted;
+          }
+      }
+      return $retArray;
     }
 }

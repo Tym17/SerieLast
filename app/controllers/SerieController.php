@@ -15,11 +15,13 @@ class Seriecontroller extends Controller
 
     function edit($id)
     {
+      // Check if $id is present, otherwise create new serie
       if (!isset($id) || strlen($id) == 0)
       {
         $this->_template->setRedirection(APP_URL . '/serie/add');
         return ;
       }
-      
+
+      //
     }
 }
