@@ -33,9 +33,10 @@ class SerieModel extends sqliteHandle
       if (!$result)
         return  array();
 
-      $result = $result->fetchArray(SQLITE3_ASSOC);
+      $ret = $result->fetchArray(SQLITE3_ASSOC);
+
       $result->finalize();
-      return $result;
+      return $ret;
     }
 
     function addSerie($ownerId, $name, $airdate, $season, $episode, $color)
@@ -50,6 +51,8 @@ class SerieModel extends sqliteHandle
       $query = str_replace(":color", $color, $query);
 
       $ret = $this->query($query);
+      if (!$ret)
+        return false;
 
       $ret->finalize();
       return $ret;
@@ -60,14 +63,18 @@ class SerieModel extends sqliteHandle
       // Prepairing and executing query
       $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'serie' . DS . 'removeSerie.sql'));
       $query = str_replace(":id", $id, $query);
+
+      $ret = $this->query($query);
+      if (!$ret)
+        return false;
+      return true;
     }
 
-    function updateSerie($id, $ownerId, $name, $airdate, $season, $episode, $color)
+    function updateSerie($id, $name, $airdate, $season, $episode, $color)
     {
       // Prepairing and executing query
       $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'serie' . DS . 'updateSerie.sql'));
       $query = str_replace(":id", $id, $query);
-      $query = str_replace(":owner_id", $ownerId, $query);
       $query = str_replace(":name", $name, $query);
       $query = str_replace(":airdate", $airdate, $query);
       $query = str_replace(":season", $season, $query);
@@ -75,6 +82,9 @@ class SerieModel extends sqliteHandle
       $query = str_replace(":color", $color, $query);
 
       $ret = $this->query($query);
+
+      if (!$ret)
+        return false;
 
       $ret->finalize();
       return $ret;

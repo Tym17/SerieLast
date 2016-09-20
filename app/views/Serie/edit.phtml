@@ -4,7 +4,7 @@
   <?php if (isset($error)) { echo '<div class="alert alert-danger">' . $error . '</div>'; } ?>
   <?php if (isset($success)) { echo '<div class="alert alert-success">' . $success . '</div>'; } ?>
   <div>
-    <form action="<?php echo APP_URL . '/serie/edit' ?>" method="post">
+    <form action="<?php echo APP_URL . '/serie/edit/' . $id ?>" method="post">
       <label class="sr-only">Name</label>
       <input name="name" type="text" placeholder="Name" class="form-control" autofocus></input>
       <br/>
@@ -16,7 +16,7 @@
       <input name="airdate" type="text" placeholder="e.g: 'Friday' or '21/12/16'" class="form-control" autofocus></input>
       <label>Color</label>
       <select name="color" class="form-control extra-padding">
-        <option value="primary">Blue</option>
+        <option value="primary" selected>Blue</option>
         <option value="danger">red</option>
         <option value="warning">orange</option>
         <option value="info">cyan</option>

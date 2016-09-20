@@ -28,6 +28,8 @@ class UserModel extends sqliteHandle
         $stm = str_replace(":pass", $pass, $stm);
 
         $ret = $this->query($stm);
+        if (!$ret)
+          return false;
 
         $ret->finalize();
         return $ret;

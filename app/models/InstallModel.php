@@ -12,6 +12,10 @@ class InstallModel extends sqliteHandle
     {
         $stm = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'populateDb.sql'));
         $result = $this->dbhandle->exec($stm);
+
+        if (!$result)
+          return false;
+
         return $result;
     }
 

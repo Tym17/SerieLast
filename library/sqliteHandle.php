@@ -22,8 +22,7 @@ class sqliteHandle
         $result = $this->dbhandle->query($query);
         if (!$result)
         {
-            // Issue #1
-            die('Could not execute query.');
+            return false;
         }
         return $result;
     }
