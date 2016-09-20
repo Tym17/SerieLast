@@ -1,0 +1,10 @@
+[20-Sep-2016 20:06:21 UTC] PHP Warning:  SQLite3::query(): Unable to execute statement: database is locked in D:\web\wamp64\www\serielast\library\sqliteHandle.php on line 22
+[20-Sep-2016 20:06:21 UTC] PHP Stack trace:
+[20-Sep-2016 20:06:21 UTC] PHP   1. {main}() D:\web\wamp64\www\serielast\public\index.php:0
+[20-Sep-2016 20:06:21 UTC] PHP   2. require_once() D:\web\wamp64\www\serielast\public\index.php:11
+[20-Sep-2016 20:06:21 UTC] PHP   3. require_once() D:\web\wamp64\www\serielast\library\bootstrap.php:34
+[20-Sep-2016 20:06:21 UTC] PHP   4. call_user_func_array:{D:\web\wamp64\www\serielast\library\init.php:54}() D:\web\wamp64\www\serielast\library\init.php:54
+[20-Sep-2016 20:06:21 UTC] PHP   5. Seriecontroller->edit() D:\web\wamp64\www\serielast\library\init.php:54
+[20-Sep-2016 20:06:21 UTC] PHP   6. SerieModel->removeSerie() D:\web\wamp64\www\serielast\app\controllers\SerieController.php:72
+[20-Sep-2016 20:06:21 UTC] PHP   7. sqliteHandle->query() D:\web\wamp64\www\serielast\app\models\SerieModel.php:78
+[20-Sep-2016 20:06:21 UTC] PHP   8. SQLite3->query() D:\web\wamp64\www\serielast\library\sqliteHandle.php:22

@@ -8,6 +8,17 @@ class SerieModel extends sqliteHandle
         parent::__construct(DB_PATH);
     }
 
+    function emptySerie()
+    {
+      return array (
+          array('Name', ''),
+          array('AirDate', ''),
+          array('LastSeason', 0),
+          array('LastEpisode', 0),
+          array('Color', 'danger')
+      );
+    }
+
     function getSeriesFromOwnerId($id)
     {
       // Prepairing and executing query
@@ -16,7 +27,7 @@ class SerieModel extends sqliteHandle
 
       $result = $this->query($query);
       if (!$result)
-        return array();
+        return $this->emptySerie();
 
       $retArray = $this->arrayify($result);
       $result->finalize();
@@ -31,7 +42,7 @@ class SerieModel extends sqliteHandle
 
       $result = $this->query($query);
       if (!$result)
-        return  array();
+        return $this->emptySerie();
 
       $ret = $result->fetchArray(SQLITE3_ASSOC);
 

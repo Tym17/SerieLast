@@ -6,21 +6,21 @@
   <div>
     <form action="<?php echo APP_URL . '/serie/edit/' . $id ?>" method="post">
       <label class="sr-only">Name</label>
-      <input name="name" type="text" placeholder="Name" class="form-control" autofocus></input>
+      <input name="name" type="text" placeholder="Name" class="form-control" autofocus value="<?php echo $Name ?>"></input>
       <br/>
       <label>Last watched episode's season</label>
-      <input name="season" type="number" value="0" class="form-control" autofocus></input>
+      <input name="season" type="number" value="<?php echo $season ?>" class="form-control" autofocus></input>
       <label>Last watched episode</label>
-      <input name="episode" type="number" value="0" class="form-control" autofocus></input>
+      <input name="episode" type="number" value="<?php echo $episode ?>" class="form-control" autofocus></input>
       <label>Air day/Release day</label>
-      <input name="airdate" type="text" placeholder="e.g: 'Friday' or '21/12/16'" class="form-control" autofocus></input>
+      <input name="airdate" type="text" placeholder="e.g: 'Friday' or '21/12/16'" class="form-control" autofocus value="<?php echo $airdate ?>"></input>
       <label>Color</label>
       <select name="color" class="form-control extra-padding">
-        <option value="primary" selected>Blue</option>
-        <option value="danger">red</option>
-        <option value="warning">orange</option>
-        <option value="info">cyan</option>
-        <option value="success">green</option>
+        <option value="primary" <?php if ($color == "primary") { echo 'selected'; }?>>Blue</option>
+        <option value="danger" <?php if ($color == "danger") { echo 'selected'; }?>>red</option>
+        <option value="warning" <?php if ($color == "warning") { echo 'selected'; }?>>orange</option>
+        <option value="info" <?php if ($color == "info") { echo 'selected'; }?>>cyan</option>
+        <option value="success" <?php if ($color == "success") { echo 'selected'; }?>>green</option>
       </select>
       <br/>
       <input type="submit" name="btn" value="Save" class="btn btn-lg btn-primary btn-block"></input><br />

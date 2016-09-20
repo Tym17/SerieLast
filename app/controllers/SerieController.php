@@ -40,13 +40,21 @@ class Seriecontroller extends Controller
       }
     }
 
+    function setInfos($serie, $id)
+    {
+      // Set infos for pre-filled form
+      $this->set('id', $id);
+      $current = $serie->getSerieFromId($id);
+      $this->set('Name', $current['Name']);
+      $this->set('airdate', $current['AirDate']);
+      $this->set('season', $current['LastSeason']);
+      $this->set('episode', $current['LastEpisode']);
+      $this->set('color', $current['Color']);
+    }
+
     function edit($id)
     {
       $serie = new SerieModel;
-      $this->set('id', $id);
-      // Set infos for form
-      $current = $serie->getSerieFromId($id);
-      var_dump($current);
 
       // Check if $id is present, otherwise create new serie
       if (!isset($id) || strlen($id) == 0)
@@ -56,13 +64,20 @@ class Seriecontroller extends Controller
       }
 
       // Check if the form has been filled
-      if (!empty($_POST) && false)
+      if (!empty($_POST))
       {
         // Delete button has been pressed
         if ($_POST['btn'] == 'Delete')
         {
+          $delRet = $serie->removeSerie($id);
+          // Check if serie has been deleted
+          if (!$delRet)
+          {
+            $this->set('error', 'Could not delete serie');
+            $this->setInfos($serie, $id);
+            return ;
+          }
           $_SESSION['notifs'][] = 'Deleted serie';
-          $serie->removeSerie($id);
           $this->_template->setRedirection(APP_URL);
           return ;
         }
@@ -89,5 +104,7 @@ class Seriecontroller extends Controller
         else
           $this->set('error', 'Something went wrong !');
       }
+
+      $this->setInfos($serie, $id);
     }
 }
