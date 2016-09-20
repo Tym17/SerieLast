@@ -2,19 +2,34 @@
 
 <!-- Showcase -->
 <div class="row">
-
+  <?php
+    // User have no serie added
+    if (empty($series)):
+  ?>
+    <div class="col-lg-12">
+      <p>You don't have any serie. </p>
+      <a href="<?php echo APP_URL . '/serie/add' ?>" class="btn btn-primary">Add one</a>
+    </div>
+  <?php
+    endif;
+    // Loop for each serie
+    foreach ($series as $serie):
+  ?>
   <!-- Single card -->
   <div class="col-lg-3">
-    <div class="card card-outline-primary">
+    <div class="card card-outline-<?php echo $serie['Color'] ?>">
       <div class="card-block">
-        <h4 class="card-title">Serie Name</h4>
-        <p class="card-text lead"><span class="darker-main">S</span>5<span class="darker-main">  E</span>10</p>
-        <p class="card-text">Coming back Thursday</p>
-        <a href="#" class="btn btn-primary">Edit</a>
+        <h4 class="card-title"><?php echo $serie['Name'] ?></h4>
+        <p class="card-text lead">
+          <span class="darker-main">S</span><?php echo $serie['LastSeason'] ?>
+          <span class="darker-main">  E</span><?php echo $serie['LastEpisode'] ?></p>
+        <p class="card-text">Coming back <?php echo $serie['AirDate'] ?></p>
+        <a href="<?php echo APP_URL . '/serie/edit/' . $serie['id'] ?>" class="btn btn-<?php echo $serie['Color'] ?>">Edit</a>
       </div>
     </div>
   </div>
   <!-- End of a card -->
+  <?php endforeach; ?>
 
 
 </div>

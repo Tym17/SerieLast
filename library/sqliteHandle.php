@@ -32,11 +32,14 @@ class sqliteHandle
       // Arrayification of results
       $retArray = array();
       $inserted = true;
+      // While there is items to be inserted
       while ($inserted)
       {
           $inserted = $result->fetchArray(SQLITE3_ASSOC);
           if ($inserted)
           {
+              // An item has been fetched
+
               $retArray[] = $inserted;
           }
       }
