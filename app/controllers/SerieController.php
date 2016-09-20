@@ -55,6 +55,12 @@ class Seriecontroller extends Controller
     function edit($id)
     {
       $serie = new SerieModel;
+      // Check if the serie belongs to the editing user
+      if ($serie->getSerieOwner($id) != $_SESSION['id'])
+      {
+        $this->_template->setRedirection(APP_URL . '/serie/add');
+        return ;
+      }
 
       // Check if $id is present, otherwise create new serie
       if (!isset($id) || strlen($id) == 0)

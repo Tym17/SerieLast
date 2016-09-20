@@ -100,4 +100,19 @@ class SerieModel extends sqliteHandle
       $ret->finalize();
       return $ret;
     }
+
+    function getSerieOwner($id)
+    {
+      // Prepairing and executing query
+      $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'serie' . DS . 'getSerieOwner.sql'));
+      $query = str_replace(":id", $id, $query);
+
+      $result = $this->query($query);
+
+      $ret = $result->fetchArray(SQLITE3_ASSOC);
+      if (!$result)
+        return false;
+
+      return $ret['OwnerId'];
+    }
 }
