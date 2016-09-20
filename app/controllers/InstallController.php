@@ -5,16 +5,44 @@ class Installcontroller extends Controller
 
     function index()
     {
+      // Prevent anybody to access Install menu if app is installed
+        if (APP_INSTALLED)
+        {
+          $this->_template->setRedirection(APP_URL);
+          return ;
+        }
     }
 
     function populateDb()
     {
+        // Prevent anybody to access Install menu if app is installed
+        if (APP_INSTALLED)
+        {
+          $this->_template->setRedirection(APP_URL);
+          return ;
+        }
+
+        // Proceed
         $install = new InstallModel;
-        $install->populate();
+        if ($install->populate())
+        {
+          $this->set('success', 'Database is cleared/Populated');
+        }
+        else
+        {
+          $this->set('error', 'Something went wrong !');
+        }
     }
 
     function addUser()
     {
+        // Prevent anybody to access Install menu if app is installed
+        if (APP_INSTALLED)
+        {
+          $this->_template->setRedirection(APP_URL);
+          return ;
+        }
+        
         // Check post values and populate db
         if (isset($_POST['name']) && isset($_POST['pass']))
         {
