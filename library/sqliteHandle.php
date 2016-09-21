@@ -45,4 +45,12 @@ class sqliteHandle
       }
       return $retArray;
     }
+
+    // Escape malicious characters
+    function es($str)
+    {
+      $str = htmlspecialchars($str);
+      $str = str_replace("'", "''", $str);
+      return $str;
+    }
 }

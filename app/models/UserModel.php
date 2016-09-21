@@ -22,6 +22,10 @@ class UserModel extends sqliteHandle
 
     function addUser($name, $pass)
     {
+        // Escaping
+        $name = $this->es($name);
+        $pass = $this->es($pass);
+
         // Prepairing and executing query
         $stm = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'users' . DS . 'addUser.sql'));
         $stm = str_replace(":name", $name, $stm);
@@ -37,6 +41,9 @@ class UserModel extends sqliteHandle
 
     function getPassFromId($id)
     {
+        // Escaping
+        $id = $this->es($id);
+
         // Prepairing and executing query
         $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'users' . DS . 'passFromId.sql'));
         $query = str_replace(":id", $id, $query);

@@ -21,6 +21,9 @@ class SerieModel extends sqliteHandle
 
     function getSeriesFromOwnerId($id)
     {
+      // Escaping
+      $id = $this->es($id);
+
       // Prepairing and executing query
       $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'serie' . DS . 'getMySeries.sql'));
       $query = str_replace(":my_id", $id, $query);
@@ -36,6 +39,9 @@ class SerieModel extends sqliteHandle
 
     function getSerieFromId($id)
     {
+      // Escaping
+      $id = $this->es($id);
+
       // Prepairing and executing query
       $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'serie' . DS . 'getSerie.sql'));
       $query = str_replace(":id", $id, $query);
@@ -52,6 +58,14 @@ class SerieModel extends sqliteHandle
 
     function addSerie($ownerId, $name, $airdate, $season, $episode, $color)
     {
+      // Escaping
+      $ownerId = $this->es($ownerId);
+      $name = $this->es($name);
+      $airdate = $this->es($airdate);
+      $season = $this->es($season);
+      $episode = $this->es($episode);
+      $color = $this->es($color);
+
       // Prepairing and executing query
       $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'serie' . DS . 'addSerie.sql'));
       $query = str_replace(":owner_id", $ownerId, $query);
@@ -71,6 +85,9 @@ class SerieModel extends sqliteHandle
 
     function removeSerie($id)
     {
+      // Escaping
+      $id = $this->es($id);
+
       // Prepairing and executing query
       $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'serie' . DS . 'removeSerie.sql'));
       $query = str_replace(":id", $id, $query);
@@ -83,6 +100,14 @@ class SerieModel extends sqliteHandle
 
     function updateSerie($id, $name, $airdate, $season, $episode, $color)
     {
+      // Escaping
+      $id = $this->es($id);
+      $name = $this->es($name);
+      $airdate = $this->es($airdate);
+      $season = $this->es($season);
+      $episode = $this->es($episode);
+      $color = $this->es($color);
+
       // Prepairing and executing query
       $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'serie' . DS . 'updateSerie.sql'));
       $query = str_replace(":id", $id, $query);
@@ -103,6 +128,9 @@ class SerieModel extends sqliteHandle
 
     function getSerieOwner($id)
     {
+      // Escaping
+      $id = $this->es($id);
+      
       // Prepairing and executing query
       $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'serie' . DS . 'getSerieOwner.sql'));
       $query = str_replace(":id", $id, $query);
