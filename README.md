@@ -1,5 +1,15 @@
 #Serielast
 
-This is an attempt to make a serie tracker to help keep track of the last episode you seen and when your favorite serie comes back on screen.
+I needed something to keep track of my serie progression so this is an attempt to make a serie tracker to help keep track of the last episode you seen and when your favorite serie comes back on screen.
 
-This is supposed to work with a basic Apache and PHP installation (You need the rewrite module activated) and sqlite3. so you should just have to drag and drop it on a shared webhosting and it should work instantly.
+## Features
+* Multiple users
+* Multiple series
+* note Episode/Season of the last episode you seen
+* Responsive
+* Custom memo about the Air Day/Release Date/Return Date
+
+[Check the Wiki for more information such as Install, User or Developper Guide](https://github.com/Tym17/SerieLast/wiki)
+
+External libraries used: 
+* [Bootstrap v4](http://v4-alpha.getbootstrap.com/)
