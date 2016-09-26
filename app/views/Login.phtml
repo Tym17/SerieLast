@@ -1,0 +1,16 @@
+<div class="center-signin">
+  <a href="<?php echo APP_URL ?>"><h1>SerieLast</h1></a>
+  <p>Log in</p>
+  <?php if (isset($error)) { echo '<div class="alert alert-danger">' . $error . '</div>'; } ?>
+  <form action="<?php echo APP_URL . '/login' ?>" method="post" class="sign_form">
+    <input type="text" name="user_name" placeholder="Name" class="form-control top"></input>
+    <input type="password" name="user_pass" placeholder="Password" class="form-control"></input>
+    <input type="submit" value="Log in" class="btn btn-lg btn-primary btn-block"></input>
+  </form>
+  <?php if (!APP_INSTALLED): ?>
+    <br />
+    <br />
+    <a href="<?php echo APP_URL . '/install' ?>" class="btn btn-lg btn-warning btn-block">Install menu</a>
+  <?php endif; ?>
+</div>
+<!-- -->
