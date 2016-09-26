@@ -1,6 +1,6 @@
 <?php
 
-class UserModel extends sqliteHandle
+class UserModel extends SqliteHandle
 {
     function __construct()
     {

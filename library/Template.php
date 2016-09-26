@@ -50,25 +50,25 @@ class Template {
         /*
         ** Load controller's specific components or general app components
         */
-        if (file_exists(ROOT . DS . 'app' . DS . 'views' . DS . $this->_controller . DS . 'header.phtml')) {
-            include (ROOT . DS . 'app' . DS . 'views' . DS . $this->_controller . DS . 'header.phtml');
+        if (file_exists(ROOT . DS . 'app' . DS . 'views' . DS . ucfirst($this->_controller) . DS . 'header.phtml')) {
+            include (ROOT . DS . 'app' . DS . 'views' . DS . ucfirst($this->_controller) . DS . 'header.phtml');
         } else {
             if (file_exists(ROOT . DS . 'app' . DS . 'views' . DS . 'header.phtml'))
                 include (ROOT . DS . 'app' . DS . 'views' . DS . 'header.phtml');
         }
 
-        if (file_exists(ROOT . DS . 'app' . DS . 'views' . DS . $this->_controller . DS . $this->_action . '.phtml'))
-            include (ROOT . DS . 'app' . DS . 'views' . DS . $this->_controller . DS . $this->_action . '.phtml');
-        else if (file_exists(ROOT . DS . 'app' . DS . 'views' . DS . $this->_controller . '.phtml'))
-            include (ROOT . DS . 'app' . DS . 'views' . DS . $this->_controller . '.phtml');
+        if (file_exists(ROOT . DS . 'app' . DS . 'views' . DS . ucfirst($this->_controller) . DS . $this->_action . '.phtml'))
+            include (ROOT . DS . 'app' . DS . 'views' . DS . ucfirst($this->_controller) . DS . $this->_action . '.phtml');
+        else if (file_exists(ROOT . DS . 'app' . DS . 'views' . DS . ucfirst($this->_controller) . '.phtml'))
+            include (ROOT . DS . 'app' . DS . 'views' . DS . ucfirst($this->_controller) . '.phtml');
         /*
         ** Load framework's component if no equivalent in app and if it exists
         */
-        else if (file_exists(ROOT . DS . 'library' . DS . 'views' . DS . $this->_controller . DS . $this->_action . '.phtml'))
-            include (ROOT . DS . 'library' . DS . 'views' . DS . $this->_controller . DS . $this->_action . '.phtml');
+        else if (file_exists(ROOT . DS . 'library' . DS . 'views' . DS . ucfirst($this->_controller) . DS . $this->_action . '.phtml'))
+            include (ROOT . DS . 'library' . DS . 'views' . DS . ucfirst($this->_controller) . DS . $this->_action . '.phtml');
 
-        if (file_exists(ROOT . DS . 'app' . DS . 'views' . DS . $this->_controller . DS . 'footer.phtml')) {
-            include (ROOT . DS . 'app' . DS . 'views' . DS . $this->_controller . DS . 'footer.phtml');
+        if (file_exists(ROOT . DS . 'app' . DS . 'views' . DS . ucfirst($this->_controller) . DS . 'footer.phtml')) {
+            include (ROOT . DS . 'app' . DS . 'views' . DS . ucfirst($this->_controller) . DS . 'footer.phtml');
         } else {
             if (file_exists(ROOT . DS . 'app' . DS . 'views' . DS . 'footer.phtml'))
                 include (ROOT . DS . 'app' . DS . 'views' . DS . 'footer.phtml');

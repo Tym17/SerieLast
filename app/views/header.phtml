@@ -7,18 +7,17 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="<?php echo APP_URL . '/favicon.ico' ?>">
+    <link rel="icon" href="favicon.ico">
 
     <title>SerieLast</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo APP_URL . '/css/bootstrap.min.css' ?>" rel="stylesheet">
+    <link href="<?php if ($this->_action != 'index') { echo '../'; } ?>css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-		<link href="<?php echo APP_URL . '/css/signin.css' ?>" rel="stylesheet">
-		<link href="<?php echo APP_URL . '/css/serielast.css' ?>" rel="stylesheet">
+		<link href="<?php if ($this->_action != 'index') { echo '../'; } ?>css/signin.css" rel="stylesheet">
+		<link href="<?php if ($this->_action != 'index') { echo '../'; } ?>css/serielast.css" rel="stylesheet">
   </head>
-
   <body>
 
 <!-- github picture -->

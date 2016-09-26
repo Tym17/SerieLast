@@ -1,6 +1,6 @@
 <?php
 
-class InstallModel extends sqliteHandle
+class InstallModel extends SqliteHandle
 {
 
     function __construct()

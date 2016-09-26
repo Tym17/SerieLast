@@ -1,6 +1,6 @@
 <?php
 
-class SerieModel extends sqliteHandle
+class SerieModel extends SqliteHandle
 {
 
     function __construct()
@@ -130,7 +130,7 @@ class SerieModel extends sqliteHandle
     {
       // Escaping
       $id = $this->es($id);
-      
+
       // Prepairing and executing query
       $query = str_replace('\n', "", file_get_contents(ROOT . DS . 'db' . DS . 'serie' . DS . 'getSerieOwner.sql'));
       $query = str_replace(":id", $id, $query);
